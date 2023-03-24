@@ -39,7 +39,7 @@
     font-size: 20px;
     font-weight: 600;
     background-color: blueviolet;
-    border: 0;
+    border: none;
     outline: none;
     color: #fff;
     padding: 6px 25px;
@@ -52,3 +52,63 @@
     background-color: rgb(29, 194, 19);
 }
 
+.rulesBox {
+    width: 320px;
+    height: 580px;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 48px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px;
+}
+
+.rulesTitle {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+.rulesList {
+    margin: auto;
+    width: 80%;
+}
+
+ol li {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 25px;
+}
+
+.btn2 button {
+    font-size: 20px;
+    font-weight: 600;
+    background-color: blueviolet;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 6px 25px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin-top: 22px;
+}
+
+.exitBtn {
+    border-radius: 0px 47px 0px 46px;
+}
+
+.exitBtn:hover {
+    background-color: red;
+}
+
+.continueBtn {
+    border-radius: 57px 0px 46px 0px;
+    margin-left: 65px;
+}
+
+.continueBtn:hover {
+    background-color: rgb(29, 194, 19);
+}
