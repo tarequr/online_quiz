@@ -52,6 +52,7 @@
     background-color: rgb(29, 194, 19);
 }
 
+/* UNKNOWN CLASS(activeInfo) */
 .rulesBox.activeInfo {
     opacity: 1;
     z-index: 5;
@@ -122,6 +123,15 @@ ol li {
     background-color: rgb(29, 194, 19);
 }
 
+
+/* UNKNOWN CLASS(activeInfo) */
+.questions.activeQuiz {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .questions {
     width: 320px;
     height: 580px;
@@ -132,6 +142,8 @@ ol li {
     box-shadow: rgb(0 0 0 / 10%) 0px 10px 50px;
     transform: translate(-50%, -50%);
     border-radius: 48px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .questionsHeader {
