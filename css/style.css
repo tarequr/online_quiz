@@ -277,3 +277,12 @@ footer button:hover {
 .options.disabled {
     pointer-events: none;
 }
+
+.questions header .time_lines {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    /* width: 50%; */
+    background: #007bff;
+}
