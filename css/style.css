@@ -261,3 +261,19 @@ footer button {
 footer button:hover {
     background-color: rgb(29, 194, 19);
 }
+
+.options.correct {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.options.inCorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.options.disabled {
+    pointer-events: none;
+}

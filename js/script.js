@@ -57,3 +57,20 @@ function showQuestions(index) {
         option[i].setAttribute('onclick', 'optionSelected(this)');
     }
 }
+
+function optionSelected(answer) {
+    let userAnswer    = answer.textContent;
+    let correctAnswer = allQuestions[question_count].answer;
+    let option_list2  = document.querySelector('.questionOptions');
+    let allOptions    = option_list2.children.length;
+
+    if (userAnswer == correctAnswer) {
+        answer.classList.add("correct");
+    } else{
+        answer.classList.add("inCorrect");
+    }
+
+    for (let i = 0; i < allOptions; i++) {
+        option_list2.children[i].classList.add("disabled");
+    }
+}
