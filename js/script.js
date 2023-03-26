@@ -18,8 +18,22 @@ exitButton.onclick = () => {
 continueButton.onclick = () => {
     rulesBox.classList.remove("activeInfo");
     questions.classList.add("activeQuiz");
-    showQuestions(3)
+    showQuestions(0);
 }
+
+const nextBtn = document.querySelector(".nextBtn");
+
+let question_count = 0;
+
+nextBtn.onclick = () => {
+    if (question_count < allQuestions.length - 1) {
+        question_count++
+        showQuestions(question_count);
+    } else {
+        console.log("You Have Completed Your Task");
+    }
+}
+
 
 function showQuestions(index) {
     const question_text = document.querySelector('.text');
@@ -33,4 +47,13 @@ function showQuestions(index) {
 
     question_text.innerHTML = question_tag;
     option_list.innerHTML   = option_tag;
+
+    const total_question = document.querySelector(".total_que");
+    let total_qtnTag = '<p>' + allQuestions[index].number + ' of ' + allQuestions.length + ' Questions ' +'</p>'
+    total_question.innerHTML = total_qtnTag;
+
+    const option = option_list.querySelectorAll('.options');
+    for (let i = 0; i < option.length; i++) {
+        option[i].setAttribute('onclick', 'optionSelected(this)');
+    }
 }
