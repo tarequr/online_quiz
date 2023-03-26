@@ -6,6 +6,8 @@ const exitButton = document.querySelector(".btn2 .exitBtn");
 const continueButton = document.querySelector(".btn2 .continueBtn");
 const questions = document.querySelector(".questions");
 
+const timeCount = document.querySelector(".timeCount .seconds");
+
 
 firstBtn.onclick = () => {
     rulesBox.classList.add("activeInfo");
@@ -19,16 +21,22 @@ continueButton.onclick = () => {
     rulesBox.classList.remove("activeInfo");
     questions.classList.add("activeQuiz");
     showQuestions(0);
+    startTimer(15);
 }
 
 const nextBtn = document.querySelector(".nextBtn");
 
 let question_count = 0;
+let counter;
+let timeValue = 15;
 
 nextBtn.onclick = () => {
     if (question_count < allQuestions.length - 1) {
         question_count++
         showQuestions(question_count);
+
+        clearInterval(counter);
+        startTimer(timeValue);
     } else {
         console.log("You Have Completed Your Task");
     }
@@ -63,6 +71,8 @@ let crossIcon = `<div class="cross icon"><i class="fas fa-times"></i></div>`;
 
 
 function optionSelected(answer) {
+    clearInterval(counter);
+
     const option_list2  = document.querySelector('.questionOptions');
     
     let userAnswer    = answer.textContent;
@@ -79,11 +89,31 @@ function optionSelected(answer) {
         for (let i = 0; i < allOptions; i++) {
             if (option_list2.children[i].textContent == correctAnswer) {
                 option_list2.children[i].setAttribute("class", "options correct");
+                option_list2.children[i].insertAdjacentHTML("beforeend", tickIcon);
             }
         }
     }
 
     for (let i = 0; i < allOptions; i++) {
         option_list2.children[i].classList.add("disabled");
+    }
+}
+
+function startTimer(time) {
+    counter = setInterval(timer, 1000);
+
+    function timer() {
+        timeCount.textContent = time;
+        time--;
+
+        if (time < 9) {
+            let addZero = timeCount.textContent;
+            timeCount.textContent = 0 + addZero;
+        }
+
+        if (time < 0) {
+            clearInterval(counter);
+            timeCount.textContent = "00";
+        }
     }
 }
