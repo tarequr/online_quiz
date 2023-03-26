@@ -58,16 +58,29 @@ function showQuestions(index) {
     }
 }
 
+let tickIcon  = `<div class="tick icon"><i class="fas fa-check"></i></div>`;
+let crossIcon = `<div class="cross icon"><i class="fas fa-times"></i></div>`;
+
+
 function optionSelected(answer) {
+    const option_list2  = document.querySelector('.questionOptions');
+    
     let userAnswer    = answer.textContent;
     let correctAnswer = allQuestions[question_count].answer;
-    let option_list2  = document.querySelector('.questionOptions');
     let allOptions    = option_list2.children.length;
 
     if (userAnswer == correctAnswer) {
         answer.classList.add("correct");
+        answer.insertAdjacentHTML("beforeend", tickIcon);
     } else{
         answer.classList.add("inCorrect");
+        answer.insertAdjacentHTML("beforeend", crossIcon);
+
+        for (let i = 0; i < allOptions; i++) {
+            if (option_list2.children[i].textContent == correctAnswer) {
+                option_list2.children[i].setAttribute("class", "options correct");
+            }
+        }
     }
 
     for (let i = 0; i < allOptions; i++) {
