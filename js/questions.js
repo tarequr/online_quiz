@@ -1,4 +1,4 @@
-let questions = [
+let allQuestions = [
     {
         number: 1,
         question: 'What is Laravel?',
@@ -54,4 +54,4 @@ let questions = [
             'Laravel Dusk'
         ] 
     }
-]
+];
