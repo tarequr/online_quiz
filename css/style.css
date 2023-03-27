@@ -257,6 +257,7 @@ footer button {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 11px;
+    display: none;
 }
 
 footer button:hover {
