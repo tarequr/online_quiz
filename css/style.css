@@ -297,7 +297,7 @@ footer button:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
     display: flex;
     background-color: #fff;
     border-radius: 45px;
@@ -305,7 +305,7 @@ footer button:hover {
     flex-direction: column;
     justify-content: center;
     transition: all 0.3s ease;
-    opacity: 1;
+    opacity: 0;
 }
 
 .result_img img {
@@ -349,4 +349,29 @@ footer button:hover {
     outline: none;
     border-radius: 25px;
     transition: all 0.3s ease;
+}
+
+.resStartBtn {
+    background-color: blueviolet;
+    color: white;
+}
+
+.resStartBtn:hover {
+    background-color: rgb(29, 194, 19);
+}
+
+.quit {
+    background-color: blueviolet;
+    color: white;
+}
+
+.quit:hover {
+    background-color: red;
+}
+
+.result_box.activeResult{
+    z-index: 5;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
 }

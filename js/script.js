@@ -29,6 +29,11 @@ continueButton.onclick = () => {
 
 const nextBtn = document.querySelector(".nextBtn");
 
+const result_box   = document.querySelector(".result_box");
+const restart_quiz = document.querySelector(".lastBtn .resStartBtn");
+const quit_quiz    = document.querySelector(".lastBtn .quit");
+
+
 let question_count = 0;
 let counter;
 let timeValue = 15;
@@ -50,6 +55,7 @@ nextBtn.onclick = () => {
         nextBtn.style.display = "none";
     } else {
         console.log("You Have Completed Your Task");
+        showResultBox();
     }
 }
 
@@ -111,6 +117,13 @@ function optionSelected(answer) {
     }
 
     nextBtn.style.display = "block";
+}
+
+function showResultBox(){
+    rulesBox.classList.remove("activeInfo");
+    questions.classList.remove("activeQuiz");
+
+    result_box.classList.add("activeResult");
 }
 
 function startTimer(time) {
