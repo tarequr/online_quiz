@@ -33,6 +33,13 @@ const result_box   = document.querySelector(".result_box");
 const restart_quiz = document.querySelector(".lastBtn .resStartBtn");
 const quit_quiz    = document.querySelector(".lastBtn .quit");
 
+restart_quiz.onclick = () => {
+    window.location.reload();
+}
+
+quit_quiz.onclick = () => {
+    window.location.reload();
+}
 
 let question_count = 0;
 let counter;
