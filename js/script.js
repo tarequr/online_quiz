@@ -41,6 +41,8 @@ let timeValue = 15;
 let counterLine;
 let widthValue = 0;
 
+let userScore = 0;
+
 nextBtn.onclick = () => {
     if (question_count < allQuestions.length - 1) {
         question_count++
@@ -98,6 +100,8 @@ function optionSelected(answer) {
     let allOptions    = option_list2.children.length;
 
     if (userAnswer == correctAnswer) {
+        userScore += 1;
+        console.log(userScore);
         answer.classList.add("correct");
         answer.insertAdjacentHTML("beforeend", tickIcon);
     } else{
@@ -124,6 +128,19 @@ function showResultBox(){
     questions.classList.remove("activeQuiz");
 
     result_box.classList.add("activeResult");
+
+    const scoreText = document.querySelector(".score_text");
+
+    if (userScore > 3) {
+        let scoreTag = '<span>congratulations  &#128522; You Got <p>'+ userScore +'</p> Out Of <p>'+ allQuestions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    } else if (userScore > 1) {
+        let scoreTag = '<span>Carry On 	&#128522; You Got <p>'+ userScore +'</p> Out Of <p>'+ allQuestions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    } else{
+        let scoreTag = '<span>Sorry! You Got <p>'+ userScore +'</p> Out Of <p>'+ allQuestions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
 }
 
 function startTimer(time) {
